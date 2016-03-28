@@ -1,0 +1,122 @@
+@media all and (max-width:1000px){
+    .filter {
+        width: 1000px;
+    }
+}
+
+body,a,span,ul,li{
+    margin:0px;
+    padding:0px;
+    font-family:"Microsoft YaHei UI";
+    font-size:100%;
+}
+
+.filter{
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    height:auto;
+    width:1000px;
+    font-size:100%;
+    border-width:1px;
+    border-color: #c0c0c0;
+    border-style:solid;
+}
+.filter a{
+    color: #806F66;
+    text-decoration:none;
+}
+.f-row{
+    position:relative;
+}
+
+.f-head{
+    position:absolute;
+    margin:1px 0px 0px 0px;
+    height:33px;
+    width:80px;
+    background-color:#F7F5F5;
+}
+
+.f-head span{
+    display:block;
+    margin-left:6px;
+    color: #a9a9a9;
+    margin-top:9px;
+}
+
+.f-select{
+    padding:9px 0px;
+    float:left;
+    margin-left:100px;
+    margin-right:100px;
+    height:34px;
+}
+.filter ul{
+    list-style-type: none;
+    font-size:100%;
+
+}
+.filter ul >li{
+    /*
+    border-width:1px;
+    border-color: transparent;
+    border-style:solid;
+    */
+    display:inline-block;
+    margin:1px 20px 20px 20px;
+    padding:2px;
+
+}
+.multiple,
+.more {
+    position:absolute;
+    top:0px;
+    right:0px;
+    display:block;
+    float:right;
+    padding:0px 2px;
+    margin:10px 4px 0px 0px;
+    background-color:#F7F5F5;
+}
+.multiple{
+    right:50px;
+}
+
+.multiple-btn{
+    height:40px;
+    margin-left:auto;
+    margin-right:auto;
+    position:absolute;
+    left:50%;
+    bottom:0px;
+}
+.multiple-enter,
+.multiple-delete{
+    position:absolute;
+    bottom:0px;
+    height:30px;
+    display:block;
+    margin:0px 5px;
+}
+.multiple-enter{
+    right:50%;
+}
+.multiple-delete{
+    left:50%;
+}
+
+.multiple-enter{
+    width:80px;
+}
+
+.multiple-delete {
+    width: 80px;
+}
+
+.selected{
+    border-width:1px;
+    border-style:solid;
+    border-color: #a8a8a8;
+}
