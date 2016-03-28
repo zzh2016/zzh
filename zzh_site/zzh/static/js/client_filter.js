@@ -106,16 +106,29 @@ $(document).ready(function(){
                         var selected_length = $(this).parent().children("li.selected").length;
                         if(selected_length < 2){ //jq不具有容错机制，rm class失败不能执行下一步的add class
                             $multiple_enter.removeClass("active").addClass("disabled");
-
                         }
                         $(this).removeClass("selected");
+                        if($(this).is($last_li)){     //判断是不是最后一个li标签，因为最后一个li标签为了让下面的按钮存在一些间隔，额外设置了margin值40px
+                            $(this).css("margin","0px 20px 40px 20px");
+                        }else{
+                            $(this).css("margin","0px 20px 20px 20px");   //恢复原来的margin值
+                        }
+
                     }else{
                         var selected_length = $(this).parent().children("li.selected").length;
                         if(selected_length === 0){
                             $multiple_enter.removeClass("disabled").addClass("active");
                         }
                         $(this).addClass("selected");
+                        //因为selected样式会增加外边框的宽度1px，相当于margin都增加了1，所以会相对应的减少margin的值与边框相呼应
+                        //设置margin
+                        if($(this).is($last_li)){     //判断是不是最后一个li标签，因为最后一个li标签为了让下面的按钮存在一些间隔，额外设置了margin值40px
+                            $(this).css("margin","0px 19px 39px 19px");
+                        }else{
+                            $(this).css("margin","0px 19px 19px 19px");   //恢复原来的margin值
+                        }
                     }
+                    //li边框的hover样式
                     $(this).hover(function(){
                         $(this).css("border-color","#D11C00");
                     },function(){
@@ -123,14 +136,6 @@ $(document).ready(function(){
                     });
 
                 });
-                /*
-                $(this).bind("mouseover.border1",function(){
-                    $(this).css("border-color","#D11C00");
-                });
-                $(this).bind("mouseout.border2",function(){
-                    $(this).css("border-color","#a8a8a8");
-                });
-                 */
             });
         });
     });
@@ -157,6 +162,7 @@ $(document).ready(function(){
                 $(this).unbind("click.multiple");
                 if($(this).hasClass("selected")){  //为什么要加判断呢？是因为jq不能容错！
                     $(this).removeClass("selected");
+                    $(this).css("margin","1px 20px 20px 20px");//恢复原来的margin ,此时不用判断是否是最后一个
                 }
                 if($multiple_enter.hasClass("active")){
                     $multiple_enter.removeClass("active").addClass("disabled");

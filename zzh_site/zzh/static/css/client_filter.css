@@ -59,15 +59,8 @@ body,a,span,ul,li{
 
 }
 .filter ul >li{
-    /*
-    border-width:1px;
-    border-color: transparent;
-    border-style:solid;
-    */
     display:inline-block;
     margin:1px 20px 20px 20px;
-    padding:2px;
-
 }
 .multiple,
 .more {
